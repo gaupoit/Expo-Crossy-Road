@@ -3,7 +3,7 @@ import AudioFiles from "./Audio";
 import { Platform } from "react-native";
 
 // Web just can't seem to handle audio
-const MUTED = Platform.OS === "web";
+const MUTED = false;
 
 class AudioManager {
   sounds = AudioFiles;

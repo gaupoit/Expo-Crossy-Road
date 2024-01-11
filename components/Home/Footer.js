@@ -45,18 +45,18 @@ export default function Footer(props) {
 
   return (
     <Animated.View style={[styles.container, props.style]}>
-      <Button
+      {/* <Button
         style={{ maxHeight: 48 }}
         onPress={props.onCharacterSelect}
         imageStyle={imageStyle}
         source={Images.button.character}
-      />
+      /> */}
 
-      {false && <CharacterPicker />}
+      <CharacterPicker />
 
       <View style={{ flex: 1 }} />
 
-      <View style={{ flexDirection: "column-reverse" }}>
+      {/* <View style={{ flexDirection: "column-reverse" }}>
         <Button
           onPress={() => {
             setMenuOpen(!menuOpen);
@@ -67,7 +67,7 @@ export default function Footer(props) {
         />
 
         {menuOpen && renderMenu}
-      </View>
+      </View> */}
     </Animated.View>
   );
 }

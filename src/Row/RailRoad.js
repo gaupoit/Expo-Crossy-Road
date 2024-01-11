@@ -1,9 +1,9 @@
-import { TweenMax } from 'gsap';
-import { Object3D, Box3, SpotLight, SpotLightHelper } from 'three';
+import { TweenMax } from "gsap";
+import { Object3D, Box3, SpotLight, SpotLightHelper } from "three";
 
-import AudioManager from '../../src/AudioManager';
-import ModelLoader from '../../src/ModelLoader';
-import { groundLevel } from '../GameSettings';
+import AudioManager from "../../src/AudioManager";
+import ModelLoader from "../../src/ModelLoader";
+import { groundLevel } from "../GameSettings";
 
 const IS_MUTED = true;
 export default class RailRoad extends Object3D {
@@ -11,7 +11,7 @@ export default class RailRoad extends Object3D {
 
   top = 0.5;
 
-  getWidth = mesh => {
+  getWidth = (mesh) => {
     let box3 = new Box3();
     box3.setFromObject(mesh);
     return Math.round(box3.max.x - box3.min.x);
@@ -25,9 +25,9 @@ export default class RailRoad extends Object3D {
 
     this.railRoad = _railroad.getNode();
 
-    this.light = _trainLight.getNode('0');
-    this.active_light_a = _trainLight.getNode('active_0');
-    this.active_light_b = _trainLight.getNode('active_1');
+    this.light = _trainLight.getNode("0");
+    this.active_light_a = _trainLight.getNode("active_0");
+    this.active_light_b = _trainLight.getNode("active_1");
 
     this._trainMesh = _train.withSize(Math.random() * 2 + 1);
     const width = this.getWidth(this._trainMesh);
@@ -51,7 +51,7 @@ export default class RailRoad extends Object3D {
 
     this.add(this.railRoad);
   }
-  setupLight = light => {
+  setupLight = (light) => {
     light.position.z = -0.5;
     light.rotation.y = Math.PI;
     // Make train light shine a little red light down
@@ -87,14 +87,14 @@ export default class RailRoad extends Object3D {
     if (train.mesh.position.x > offset && train.speed > 0) {
       train.mesh.position.x = -offset;
       this.startRingingLight();
-      AudioManager.playAsync(AudioManager.sounds.train.move['0']);
+      AudioManager.playAsync(AudioManager.sounds.train.move["0"]);
       if (train === hitByTrain) {
         player.hitByTrain = null;
       }
     } else if (train.mesh.position.x < -offset && train.speed < 0) {
       train.mesh.position.x = offset;
       this.startRingingLight();
-      AudioManager.playAsync(AudioManager.sounds.train.move['0']);
+      AudioManager.playAsync(AudioManager.sounds.train.move["0"]);
       if (train === hitByTrain) {
         player.hitByTrain = null;
       }
@@ -127,7 +127,7 @@ export default class RailRoad extends Object3D {
             z: Math.random() * Math.PI - Math.PI / 2,
           });
 
-          this.onCollide(train, 'feathers', 'train');
+          this.onCollide(train, "feathers", "train");
           return;
         } else {
           ///Run Over Hero. ///TODO: Add a side collide
