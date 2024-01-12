@@ -5,3 +5,5 @@ release/builds
 .vscode
 /web-build/
 /web-report
+# Local Netlify folder
+.netlify
