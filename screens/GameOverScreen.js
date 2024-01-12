@@ -74,19 +74,19 @@ function GameOver({ ...props }) {
     setTimeout(() => {
       _animateBanners();
 
-      const playBannerSound = async () => {
-        await AudioManager.playAsync(AudioManager.sounds.banner);
-        const soundObject = new Audio.Sound();
-        try {
-          await soundObject.loadAsync(AudioFiles.banner);
-          await soundObject.playAsync();
-        } catch (error) {
-          console.warn("sound error", { error });
-        }
-      };
-      playBannerSound();
-      setTimeout(() => playBannerSound(), 300);
-      setTimeout(() => playBannerSound(), 600);
+      // const playBannerSound = async () => {
+      //   await AudioManager.playAsync(AudioManager.sounds.banner);
+      //   const soundObject = new Audio.Sound();
+      //   try {
+      //     await soundObject.loadAsync(AudioFiles.banner);
+      //     await soundObject.playAsync();
+      //   } catch (error) {
+      //     console.warn("sound error", { error });
+      //   }
+      // };
+      // playBannerSound();
+      // setTimeout(() => playBannerSound(), 300);
+      // setTimeout(() => playBannerSound(), 600);
     }, 600);
   });
 
