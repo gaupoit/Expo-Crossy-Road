@@ -8,7 +8,7 @@
     "serve": "npx serve ./web-build",
     "build:web": "expo build:web",
     "start:web": "expo start:web",
-    "deploy:web": "netlify deploy --prod --dir web-build"
+    "deploy:web": "netlify deploy --site catpurr-crossy  --prod --dir web-build"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "~1.15.0",
